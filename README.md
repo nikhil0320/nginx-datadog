@@ -1,18 +1,17 @@
-This is the playbook to configure the datadog to moniter the nginx server.
-1.Run the playbook to install datadog .
-2.Run the playbook to configure the nginx
+This is the playbook to configure the datadog to moniter the nginx server.<br>
+1.Run the playbook to install datadog .<br>
+2.Run the playbook to configure the nginx<br>
 
-Make sure that: 
- 
-  We have to Enable the mod_status on your Nginx server, 
-  
-  HttpStubStatusModule is the module that enable the module to read all the metrics, so, you need to know if it is enabled  or not. 
+<b>Make sure that:</b>
+<br>
+  We have to Enable the mod_status on Nginx server.<br>
+  HttpStubStatusModule is the module enables to read all nginx metrics, so, you need to know if it is enabled  or not.<br>
 
-You can check this out using this command:
+You can check this using this command:<br>
 nginx -V 2>&1 | sed 's,--,n--,g' | grep stub_status</br>
 
 If it is compiled, you should see something like this:</br></br>
---with-http_stub_status_module 
+--with-http_stub_status_module
 
 It is enabled by default on most distributions so, in order to enable Nginx status page the next step is editing nginx.conf. Find your nginx.conf file, it may be at one of this locations.
 /usr/local/nagios/etc/nginx.conf</br>
@@ -28,3 +27,6 @@ access_log off;</br>
 allow 127.0.0.1;</br>
 deny all;</br>
 }</br>
+
+<b>Note:</b><br>
+The Playbook works with Amazon linux only.
