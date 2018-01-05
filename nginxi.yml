@@ -1,0 +1,10 @@
+#
+#About: This will configure integration of tomcat  with ansible
+#
+
+---
+- hosts: servers
+  become: yes
+  user: ec2-user
+  roles:
+     - {role: dd-nginx }
